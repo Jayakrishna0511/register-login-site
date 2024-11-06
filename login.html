@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="email" name="email" id="" placeholder="email">
+    <input type="password" name="password" id="" placeholder="password">
+    <button onclick=handleLogin()>Login</button>
+
+    <script>
+        function handleLogin(){
+            let user_email=document.getElementsByName("email")[0].value;
+            console.log(user_email);
+            
+            let user_password=document.getElementsByName("password")[0].value;
+            console.log(user_password);
+            
+
+            let reg_data=JSON.parse(localStorage.getItem("details"))
+            console.log(reg_data)
+
+            if(user_email!==reg_data.email && user_password!==reg_data.pasword){
+                alert("invalid credentials")
+            }
+            else if(user_email===reg_data.email && user_password!==reg_data.pasword ){
+                        alert("invalid password")
+            }
+            else if(user_email!==reg_data.email && user_password===reg_data.pasword ){
+                            alert("email")           
+
+            } else{
+                alert("login succesful")
+                location.assign("./json.html")
+        }
+        }
+    </script>
+</body>
+</html>

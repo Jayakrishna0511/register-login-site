@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="useremail" id="" placeholder="email">
+    <input type="text" name="username" id="" placeholder="name">
+    <input type="password" name="password" id="" placeholder="password">
+    <button onclick=handleRegister()>Register</button>
+
+   <script>
+
+    userdata={} 
+    const handleRegister=()=>{
+        let email =document.getElementsByName("useremail")[0].value;
+    let name =document.getElementsByName("username")[0].value;
+    let password =document.getElementsByName("password")[0].value;
+        userdata.email=email
+        userdata.name=name
+        userdata.password=password
+        console.log(userdata)
+        alert("succesfully registered")
+
+        localStorage.setItem("details",JSON.stringify(userdata))
+    }
+   </script>
+</body>
+</html>
